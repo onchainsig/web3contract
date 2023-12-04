@@ -4,6 +4,8 @@ Chain tools, contract interaction etc.
 
 ## Setup
 
+You need install `git`, `node.js` first, and node version >= 14.
+
 ```shell
 git clone https://github.com/onchainsig/web3contract.git
 
