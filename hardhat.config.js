@@ -6,6 +6,8 @@ require('dotenv').config();
 require('./tasks/selector')
 require('./tasks/accounts')
 require('./tasks/erc20')
+require('./tasks/nft')
+require('./tasks/permit2')
 
 module.exports = {
   solidity: "0.8.19",
