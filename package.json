@@ -1,0 +1,22 @@
+{
+  "name": "web3contract",
+  "version": "1.0.0",
+  "description": "contract interaction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "contract"
+  ],
+  "author": "shaohan.niu.share@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.1"
+  }
+}
