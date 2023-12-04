@@ -9,5 +9,5 @@ module.exports = task("selector", "Function selector")
         const signature = taskArgs.signature;
         const id = hre.ethers.id(signature);
 
-        console.log("Function: %s, id: %s, selector: %s", signature, id, id.slice(0, 10))
+        console.log("event or function signature: %s \nid: %s \nselector: %s", signature, id, id.slice(0, 10))
     });
