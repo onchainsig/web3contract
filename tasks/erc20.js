@@ -4,6 +4,31 @@ require('dotenv').config();
 let task = require("hardhat/config").task;
 
 module.exports = {
+    decimals: task("metadata", "Erc20 token decimals")
+      .addPositionalParam("contract")
+      .setAction(async (taskArgs, hre) => {
+        const contractAddress = taskArgs.contract;
+
+        const signers = await hre.ethers.getSigners();
+        if (signers.length === 0) {
+            console.error("Please config your accounts for network %s", hre.network.name);
+            process.exit(1);
+        }
+
+        let account = taskArgs.account || '0';
+        account = parseInt(account);
+
+        const signer = signers[account];
+
+        const abi = (await hre.ethers.getContractFactory("Gold")).interface;
+        const contract = new hre.ethers.Contract(contractAddress, abi, signer);
+        const decimals = await contract.decimals();
+        const name = await contract.name();
+        const symbol = await contract.symbol();
+
+        console.log('Contract Address: %s, Decimals: %s, name: %s, symbol: %s', 
+            contractAddress, decimals, name, symbol);
+    }),
     transfer: task("20transfer", "Transfer erc20 tokens")
     .addParam("contract", "The contract")
     .addOptionalParam("account", "The account number, default 0")
