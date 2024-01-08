@@ -9,6 +9,9 @@ require('./tasks/erc20')
 require('./tasks/nft')
 require('./tasks/permit2')
 
+// test
+require('./tasks/test/transfer-from')
+
 module.exports = {
   solidity: "0.8.19",
   defaultNetwork: "hardhat",

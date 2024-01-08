@@ -136,8 +136,8 @@ POSITIONAL ARGUMENTS:
 
 20approve: Approval erc20 tokens
 
-$ npx hardhat approve --contract 0x0CdD07A264f27Ca09Db4f9FdF65309b17f0Fb584 --network mumbai 0x9e8ad8877c190ec99CFa11365d947b604c6c4e83 200001
-$ npx hardhat approve --contract 0x0CdD07A264f27Ca09Db4f9FdF65309b17f0Fb584 --network mumbai --account 0 0x9e8ad8877c190ec99CFa11365d947b604c6c4e83 200001
+$ npx hardhat 20approve --contract 0x0CdD07A264f27Ca09Db4f9FdF65309b17f0Fb584 --network mumbai 0x9e8ad8877c190ec99CFa11365d947b604c6c4e83 200001
+$ npx hardhat 20approve --contract 0x0CdD07A264f27Ca09Db4f9FdF65309b17f0Fb584 --network mumbai --account 0 0x9e8ad8877c190ec99CFa11365d947b604c6c4e83 200001
 ```
 
 - 20allowance
