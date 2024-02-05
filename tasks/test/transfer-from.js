@@ -13,6 +13,8 @@ module.exports = {
         const addressA = '0xC15f02ddbcD8ECe0E6Aee452370b15516D658D0c';
         const addressB = '0x50A7648b04BE66fF749f94FC55Bb0d34dcBDF83B';
 
+        const addressC = '0x9e8ad8877c190ec99CFa11365d947b604c6c4e83';
+
         // 3. B 地址发起 transferFrom，从 A 地址转 1 USDC 到自己的地址
         const signers = await hre.ethers.getSigners();
         if (signers.length === 0) {

@@ -12,9 +12,14 @@ async function main() {
   const AngryBirds = await hre.ethers.getContractFactory("AngryBirds");
   const bird = await AngryBirds.deploy();
 
-  await bird.deployed();
+  await bird.waitForDeployment();
+  const contractAddress = await bird.getAddress();
+
+  const signerAddress = await bird.signer.getAddress();
+
+  // bird.signer.address
   
-  console.log(`AngryBirds NFT's owner ${bird.signer.address} deployed to ${bird.address}`);
+  console.log(`AngryBirds NFT's owner ${signerAddress} deployed to ${contractAddress}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

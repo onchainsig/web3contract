@@ -22,6 +22,10 @@ module.exports = {
       url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts: [process.env.DEFAULT_PRIVATE_KEY]
     },
+    seth: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.DEFAULT_PRIVATE_KEY]
+    },
     bsctestnet: {
       url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
       accounts: [process.env.DEFAULT_PRIVATE_KEY]
@@ -38,6 +42,15 @@ module.exports = {
     opgoerli: {
       // url: `https://optimism-goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
       url: 'https://optimism-goerli.publicnode.com',
+      accounts: [process.env.DEFAULT_PRIVATE_KEY]
+    },
+    opseth: {
+      // url: `https://optimism-goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      url: `https://optimism-sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      accounts: [process.env.DEFAULT_PRIVATE_KEY]
+    },
+    arbseth: {
+      url: `https://arbitrum-sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts: [process.env.DEFAULT_PRIVATE_KEY]
     }
   }
