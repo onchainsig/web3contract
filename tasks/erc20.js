@@ -57,6 +57,36 @@ module.exports = {
 
         console.log('Tx Hash:', tx.hash);
     }),
+    transfer: task("20transferFrom", "Transfer from erc20 tokens")
+    .addParam("contract", "The contract")
+    .addOptionalParam("account", "The account number, default 0")
+    .addPositionalParam("from")
+    .addPositionalParam("to")
+    .addPositionalParam("amount")
+    .setAction(async (taskArgs, hre) => {
+        const contractAddress = taskArgs.contract;
+        const from = taskArgs.from;
+        const to = taskArgs.to;
+        const amount = taskArgs.amount;
+
+        const signers = await hre.ethers.getSigners();
+        if (signers.length === 0) {
+            console.error("Please config your accounts for network %s", hre.network.name);
+            process.exit(1);
+        }
+
+        let account = taskArgs.account || '0';
+        account = parseInt(account);
+
+        const signer = signers[account];
+        const abi = (await hre.ethers.getContractFactory("Gold")).interface;
+
+        const contract = new hre.ethers.Contract(contractAddress, abi, signer);
+        const tx = await contract.transferFrom(from, to, amount);
+        await tx.wait();
+
+        console.log('Tx Hash:', tx.hash);
+    }),
     approve: task("20approve", "Approval erc20 tokens")
         .addParam("contract", "The contract")
         .addOptionalParam("account", "The account number, default 0")
